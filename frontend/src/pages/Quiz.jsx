@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
 function Quiz() {
@@ -8,7 +9,7 @@ function Quiz() {
 
     const [questions, setQuestions] = useState([]);
     const [answers, setAnswers] = useState([]);
-
+const navigate = useNavigate();
     useEffect(() => {
 
         const fetchQuestions = async () => {
@@ -74,10 +75,11 @@ function Quiz() {
                 }
             );
 
-            console.log(
-    "Quiz Submitted:",
-    JSON.stringify(response.data, null, 2)
-);
+navigate("/result", {
+    state: {
+        result: response.data.result
+    }
+});
         } catch (error) {
 
             console.log(error.response?.data || error.message);
