@@ -136,7 +136,7 @@ PORT=5000
 | Name | Role |
 |------|------|
 | Pallavi Siri Gudla | Developer |
-| Member 2 | Developer |
+| J.A.G.Sravani | Developer |
 | Member 3 | Developer |
 | Member 4 | Developer |
 | Member 5 | Developer |
