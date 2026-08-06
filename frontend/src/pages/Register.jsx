@@ -1,119 +1,110 @@
-import { useState } from "react";
-import api from "../services/api";
+import { useLocation, useNavigate } from "react-router-dom";
 
-function Register() {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [role, setRole] = useState("student");
+function Result() {
 
-    const handleRegister = async () => {
-        try {
-            const response = await api.post("/auth/register", {
-                name,
-                email,
-                password,
-                role
-            });
+    const { state } = useLocation();
+    const navigate = useNavigate();
 
-            console.log(response.data);
+    if (!state) {
+        return (
+            <div className="container mt-5">
 
-        } catch (error) {
-            console.log(error.response.data);
-        }
-    };
+                <h3>No Result Found</h3>
+
+                <button
+                    className="btn btn-primary mt-3"
+                    onClick={() => navigate("/student")}
+                >
+                    Back to Dashboard
+                </button>
+
+            </div>
+        );
+    }
+
+    const { result } = state;
 
     return (
         <div className="container mt-5">
-            <div className="row justify-content-center">
 
-                <div className="col-md-5">
+            <div className="card shadow">
 
-                    <div className="card shadow">
+                <div className="card-body">
 
-                        <div className="card-body">
+                    <h2 className="text-success mb-4">
+                        Quiz Result
+                    </h2>
 
-                            <h2 className="text-center mb-4">
-                                Register
-                            </h2>
+                    <h4>
+                        Score : {result.score} / {result.totalMarks}
+                    </h4>
 
-                            {/* Name */}
-                            <div className="mb-3">
-                                <label className="form-label">
-                                    Name
-                                </label>
+                    <h4 className="mb-4">
+                        Percentage : {result.percentage}%
+                    </h4>
 
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Enter your name"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                />
+                    <hr />
+
+                    <h4>Answer Review</h4>
+
+                    {result.answers.map((answer, index) => (
+
+                        <div
+                            key={answer._id}
+                            className="card mt-3"
+                        >
+
+                            <div className="card-body">
+
+                                <h5>Question {index + 1}</h5>
+
+                                <p>
+                                    <strong>Your Answer:</strong>{" "}
+                                    {answer.selectedOption}
+                                </p>
+
+                                <p>
+                                    <strong>Correct Answer:</strong>{" "}
+                                    {answer.correctAnswer}
+                                </p>
+
+                                <p>
+                                    <strong>Status:</strong>{" "}
+                                    {answer.isCorrect ? (
+                                        <span className="text-success">
+                                            Correct ✅
+                                        </span>
+                                    ) : (
+                                        <span className="text-danger">
+                                            Wrong ❌
+                                        </span>
+                                    )}
+                                </p>
+
+                                <p>
+                                    <strong>Marks Awarded:</strong>{" "}
+                                    {answer.marksAwarded}
+                                </p>
+
                             </div>
-
-                            {/* Email */}
-                            <div className="mb-3">
-                                <label className="form-label">
-                                    Email
-                                </label>
-
-                                <input
-                                    type="email"
-                                    className="form-control"
-                                    placeholder="Enter your email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </div>
-
-                            {/* Password */}
-                            <div className="mb-3">
-                                <label className="form-label">
-                                    Password
-                                </label>
-
-                                <input
-                                    type="password"
-                                    className="form-control"
-                                    placeholder="Enter your password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                            </div>
-
-                            {/* Role */}
-                            <div className="mb-3">
-                                <label className="form-label">
-                                    Role
-                                </label>
-
-                                <select
-                                    className="form-select"
-                                    value={role}
-                                    onChange={(e) => setRole(e.target.value)}
-                                >
-                                    <option value="student">Student</option>
-                                    <option value="admin">Admin</option>
-                                </select>
-                            </div>
-
-                            <button
-                                className="btn btn-success w-100"
-                                onClick={handleRegister}
-                            >
-                                Register
-                            </button>
 
                         </div>
 
-                    </div>
+                    ))}
+
+                    <button
+                        className="btn btn-primary mt-4"
+                        onClick={() => navigate("/student")}
+                    >
+                        Back to Dashboard
+                    </button>
 
                 </div>
 
             </div>
+
         </div>
     );
 }
 
-export default Register;
+export default Result;

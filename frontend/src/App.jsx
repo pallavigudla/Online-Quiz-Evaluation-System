@@ -6,6 +6,9 @@ import Register from "./pages/Register";
 import VerifyOTP from "./pages/VerifyOTP";
 import StudentDashboard from "./pages/StudentDashboard";
 import Quiz from "./pages/Quiz";
+import Result from "./pages/Result";
+import AdminDashboard from "./pages/AdminDashboard";
+import CreateQuiz from "./pages/CreateQuiz";
 function App() {
   return (
     <Routes>
@@ -15,6 +18,9 @@ function App() {
       <Route path="/verify-otp" element={<VerifyOTP />} />
       <Route path="/student" element={<StudentDashboard />} />
       <Route path="/quiz/:quizId" element={<Quiz />} />
+      <Route path="/result" element={<Result />} />
+      <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/admin/create-quiz" element={<CreateQuiz />} />
     </Routes>
   );
 }
