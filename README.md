@@ -147,12 +147,6 @@ JWT_SECRET=your_secret_key
 EMAIL_USER=your_email
 EMAIL_PASS=your_app_password
 PORT=5000
-```
-
-> ⚠️ Do not upload the `.env` file to GitHub. It contains sensitive credentials.
-
----
-
 ## 📸 Screenshots
 
 ### 🏠 Home Page
