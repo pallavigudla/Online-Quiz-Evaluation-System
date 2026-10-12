@@ -1,144 +1,90 @@
-<<<<<<< HEAD
-﻿# 📝 Online Quiz Evaluation System
-=======
 # 📝 Online Quiz Evaluation System
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
 
-A full-stack MERN-based Online Quiz Evaluation System developed as part of the Full Stack Development (FSD-2) course.
+A full-stack MERN-based Online Quiz Evaluation System developed as part of the Full Stack Development (FSD-2) course at Sri Vasavi Engineering College.
+
+The system provides an online platform where students can register, verify their email, attend quizzes, and view their results. Administrators can create quizzes, manage questions, and monitor student performance.
 
 ## 🚀 Features
 
-### Authentication
-<<<<<<< HEAD
-- User Registration
-- Email OTP Verification
-- Login using JWT Authentication
-- Role-Based Access (Admin & Student)
+### 🔐 Authentication and Security
+- User registration
+- Email OTP verification
+- Login using JWT authentication
+- Role-based access for students and administrators
+- Password hashing
+- Password-reset functionality
 
-### Student Module
-- View Available Quizzes
-- Start Quiz
-- Attempt Questions
-- Submit Quiz
-- Automatic Score Calculation
-- View Result
+### 🎓 Student Module
+- Student dashboard
+- View available quizzes
+- Attempt quiz questions
+- Submit quiz answers
+- Automatic score calculation
+- View quiz results and result history
+- Manage student profile
 
-### Admin Module
-- Admin Login
-- Create Quiz
-- Add Questions
-- View Quiz Results
-- Manage Quizzes
-=======
+### 🛠️ Admin Module
+- Admin dashboard
+- Create and manage quizzes
+- Add and manage questions
+- View quiz results
+- View analytics and student performance
 
-* User Registration
-* Email OTP Verification
-* Login using JWT Authentication
-* Role-Based Access (Admin & Student)
+## 🧰 Applications and Tools Used
 
-### Student Module
+| Application / Technology | Purpose |
+|---|---|
+| React.js | Builds the frontend user interface |
+| HTML5, CSS3, JavaScript | Structures, styles, and adds interactivity to pages |
+| React Router DOM | Navigates between pages |
+| Axios | Sends HTTP requests to the backend |
+| Node.js | Runs server-side JavaScript |
+| Express.js | Creates backend APIs and routes |
+| MongoDB Atlas | Cloud database service |
+| Mongoose | Defines models and interacts with MongoDB |
+| JSON Web Token (JWT) | Authenticates users |
+| bcryptjs | Hashes passwords |
+| Nodemailer | Sends email verification messages |
+| dotenv | Loads environment variables |
+| CORS | Configures cross-origin requests |
+| npm | Manages project dependencies |
+| Git and GitHub | Version control and source-code hosting |
+| concurrently | Runs frontend and backend processes together |
 
-* View Available Quizzes
-* Start Quiz
-* Attempt Questions
-* Submit Quiz
-* Automatic Score Calculation
-* View Result
+## 🏗️ System Architecture
 
-### Admin Module
+The application follows a client-server architecture.
 
-* Admin Login
-* Create Quiz
-* Add Questions
-* View Quiz Results
-* Manage Quizzes
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
+1. **Frontend:** React.js displays the user interface and sends API requests using Axios.
+2. **Backend:** Node.js and Express.js handle requests, authentication, quiz operations, and result processing.
+3. **Database:** MongoDB stores user accounts, quizzes, questions, and results.
+4. **Authentication:** JWT and password hashing support authenticated access and account security.
+5. **Email verification:** Nodemailer sends verification emails.
 
----
-
-## 🛠 Tech Stack
-
-### Frontend
-<<<<<<< HEAD
-- React.js
-- React Router DOM
-- Axios
-- Bootstrap
-- Vite
-
-### Backend
-- Node.js
-- Express.js
-- JWT Authentication
-- Nodemailer
-
-### Database
-- MongoDB Atlas
-- Mongoose
-=======
-
-* React.js
-* React Router DOM
-* Axios
-* Bootstrap
-* Vite
-
-### Backend
-
-* Node.js
-* Express.js
-* JWT Authentication
-* Nodemailer
-
-### Database
-
-* MongoDB Atlas
-* Mongoose
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
-
----
+The frontend communicates with the backend through HTTP APIs, and the backend interacts with MongoDB using Mongoose.
 
 ## 📂 Project Structure
 
-<<<<<<< HEAD
-```bash
-online-quiz-portal
-├── Backend/
-=======
 ```text
-Online-Quiz-Evaluation-System
-│
+Online-Quiz-Evaluation-System/
 ├── Backend/
 │   ├── config/
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
+│   │   └── db.js
 │   ├── controllers/
+│   │   ├── analyticsController.js
+│   │   ├── attemptController.js
+│   │   ├── authController.js
+│   │   ├── questionController.js
+│   │   ├── quizController.js
+│   │   ├── resultController.js
+│   │   └── studentController.js
 │   ├── middleware/
+│   │   ├── adminMiddleware.js
+│   │   └── authMiddleware.js
 │   ├── models/
 │   ├── routes/
-<<<<<<< HEAD
-│   ├── config/
-│   ├── server.js
-│   └── package.json
-├── Frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   ├── services/
-│   │   └── App.jsx
-│   └── package.json
-├── .gitignore
-├── README.md
-├── Screenshots/
-│   ├── Home.png
-│   ├── Login.png
-│   ├── Register.png
-│   ├── StudentDashboard.png
-│   └── AdminDashboard.png
-└── package.json
-=======
 │   ├── services/
 │   ├── utils/
-│   ├── seedAdmins.js
 │   ├── server.js
 │   └── package.json
 │
@@ -148,197 +94,143 @@ Online-Quiz-Evaluation-System
 │   │   ├── components/
 │   │   ├── pages/
 │   │   ├── services/
+│   │   │   └── api.js
 │   │   ├── App.jsx
 │   │   ├── App.css
 │   │   └── index.js
 │   └── package.json
 │
-├── screenshots/
-│   ├── home.png
-│   ├── register.png
-│   ├── student-dashboard.png
-│   └── quiz.png
-│
+├── Screenshots/
 ├── .gitignore
 └── README.md
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
 ```
 
----
+## ⚙️ Installation and Setup
 
-## ⚙️ Installation
-
-### Clone Repository
+### 1. Clone the repository
 
 ```bash
-<<<<<<< HEAD
-git clone https://github.com/SURENDRATHONTA/online-quiz-portal.git
-cd online-quiz-portal
-=======
 git clone https://github.com/pallavigudla/Online-Quiz-Evaluation-System.git
 cd Online-Quiz-Evaluation-System
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
 ```
 
-### Backend Setup
+### 2. Install backend dependencies
 
-<<<<<<< HEAD
-=======
-Open a terminal and run:
-
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
 ```bash
 cd Backend
 npm install
-npm run dev
 ```
 
-<<<<<<< HEAD
-### Frontend Setup
+### 3. Install frontend dependencies
 
-```bash
-cd ../Frontend
-npm install
-npm run dev
-=======
-The backend server will run on:
-
-```text
-http://localhost:5000
-```
-
-### Frontend Setup
-
-Open a **new terminal** and run:
+Open a terminal at the project root, then run:
 
 ```bash
 cd Frontend
 npm install
-npm start
 ```
 
-The frontend will run on:
+### 4. Configure environment variables
 
-```text
-http://localhost:3000
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
-```
-
----
-
-## 🔐 Environment Variables
-
-Create a `.env` file inside the `Backend` folder.
+Create a `.env` file inside the `Backend` directory.
 
 ```env
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-EMAIL_USER=your_email
-EMAIL_PASS=your_app_password
 PORT=5000
-<<<<<<< HEAD
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+EMAIL_USER=your_email_address
+EMAIL_PASS=your_email_app_password
 ```
 
----
+Replace the example values with your actual configuration.
 
-## 📸 Screenshots
+**Security:** Never commit `.env` files, database credentials, email passwords, or JWT secrets to GitHub.
 
-### Home Page
-![Home Page](Screenshots/Home.png)
+### 5. Run the frontend and backend in one terminal
 
-### Register Page
-![Register Page](Screenshots/Register.png)
+Open a terminal in the project root directory:
 
-### Login Page
-![Login Page](Screenshots/Login.png)
+```bash
+npx --yes concurrently -n BACKEND,FRONTEND -c blue,green "cd Backend && node server.js" "cd Frontend && npm start"
+```
 
-### Student Dashboard
-![Student Dashboard](Screenshots/StudentDashboard.png)
+This command launches both applications concurrently in the same terminal.
 
-### Admin Dashboard
-![Admin Dashboard](Screenshots/AdminDashboard.png)
-=======
+### 6. Access the application
+
+| Component | Local URL |
+|---|---|
+| Frontend | http://localhost:3000 |
+| Backend | http://localhost:5000 |
+
+Keep the terminal running while using the application. Press `Ctrl + C` to stop the processes.
+
+## 🔄 Application Workflow
+
+1. Students register and verify their email.
+2. Students log in using their credentials.
+3. The frontend sends requests to the backend APIs.
+4. The backend authenticates users and retrieves quiz data.
+5. Students attempt quizzes and submit their answers.
+6. The backend calculates the score and stores the result.
+7. Students view their results, and administrators review quiz performance.
+
 ## 📸 Screenshots
 
 ### 🏠 Home Page
 
-<p align="center">
-  <img src="screenshots/home.png" alt="Home Page" width="800">
-</p>
+![Home Page](Screenshots/Home.png)
 
-### 📝 Register Page
+### 🔑 Login Page
 
-<p align="center">
-  <img src="screenshots/register.png" alt="Register Page" width="800">
-</p>
+![Login Page](Screenshots/Login.png)
 
-### 👨‍🎓 Student Dashboard
+### 📝 Registration Page
 
-<p align="center">
-  <img src="screenshots/student-dashboard.png" alt="Student Dashboard" width="800">
-</p>
+![Registration Page](Screenshots/Register.png)
 
-### 📝 Quiz Page
+### 🎓 Student Dashboard
 
-<p align="center">
-  <img src="screenshots/quiz.png" alt="Quiz Page" width="800">
-</p>
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
+![Student Dashboard](Screenshots/StudentDashboard.png)
 
----
+### 🛠️ Admin Dashboard
 
-## 👨‍💻 Team Members
+![Admin Dashboard](Screenshots/AdminDashboard.png)
 
-<<<<<<< HEAD
+## 🎯 Project Objectives
+
+- Simplify online quiz administration.
+- Reduce manual evaluation effort.
+- Provide quick access to quiz results.
+- Maintain separate student and administrator permissions.
+- Store quiz data and evaluation results persistently.
+
+## 🔮 Future Enhancements
+
+- Quiz timer and time-limit enforcement
+- Leaderboards and rankings
+- Certificate generation
+- Enhanced analytics and reports
+- Improved accessibility and responsive design
+- Dark mode
+
+## 👥 Team Members
+
 | Name | Role |
-|------|------|
-| Surendra Thonta | Developer |
-| Sanjay Kumar Vadali | Developer |
-| Shankar Palli | Developer |
-| Jhansi Kagani | Developer |
-| Pallavi Siri Gudla | Developer |
-=======
-| Name        | Role      |
-| ------------| --------- |
+|---|---|
 | Jhansi Rani | Developer |
-| Surendra    | Developer |
-| Pallavi Siri| Developer |
-| Sanjay      | Developer |
-| Siva Shankar| Developer |
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
+| Surendra | Developer |
+| Pallavi Siri | Developer |
+| Sanjay | Developer |
+| Siva Shankar | Developer |
 
----
+## 🎓 Academic Information
 
-## 📚 Academic Project
-
-**Course:** Full Stack Development (FSD-2)
-
-**Technology:** MERN Stack
-
-**Institution:** Sri Vasavi Engineering College
-
----
-
-## ⭐ Future Enhancements
-
-<<<<<<< HEAD
-- Timer for Quiz
-- Leaderboard
-- Certificate Generation
-- Quiz Analytics
-- Responsive UI
-- Dark Mode
-=======
-* Timer for Quiz
-* Leaderboard
-* Certificate Generation
-* Quiz Analytics
-* Responsive UI
-* Dark Mode
->>>>>>> 377bf120e5a22eb638834a6e13d6285a56521b05
-
----
+**Course:** Full Stack Development (FSD-2)  
+**Institution:** Sri Vasavi Engineering College  
+**Project:** Online Quiz Evaluation System  
+**Technology Stack:** MERN
 
 ## 📄 License
 
-This project is developed for educational purposes.
+This project was developed for educational purposes as part of academic coursework.
