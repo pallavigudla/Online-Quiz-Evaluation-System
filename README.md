@@ -191,7 +191,6 @@ Keep the terminal running while using the application. Press `Ctrl + C` to stop 
 
 ### 🎓 Student Dashboard
 
-![Student Dashboard](Screenshots/StudentDashboard.png)
 
 ### 🛠️ Admin Dashboard
 
